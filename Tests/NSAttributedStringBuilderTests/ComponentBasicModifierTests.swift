@@ -5,15 +5,15 @@ final class ComponentBasicModifierTests: XCTestCase {
     func testModifyWithSingleAttribute() {
         let testData: NSAttributedString = {
             let mas = NSMutableAttributedString(string: "Hello world",
-                                                attributes: [.foregroundColor: Color.yellow])
+                                                attributes: [.foregroundColor: ColorAlias.yellow])
             mas.append(NSAttributedString(string: " with Swift"))
             return mas
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
-                .attribute(.foregroundColor, value: Color.yellow)
-            AText(" with Swift")
+            Content("Hello world")
+                .attribute(.foregroundColor, value: ColorAlias.yellow)
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -22,15 +22,15 @@ final class ComponentBasicModifierTests: XCTestCase {
     func testModifyBackgroundColor() {
         let testData: NSAttributedString = {
             let mas = NSMutableAttributedString(string: "Hello world",
-                                                attributes: [.backgroundColor: Color.red])
+                                                attributes: [.backgroundColor: ColorAlias.red])
             mas.append(NSAttributedString(string: " with Swift"))
             return mas
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .backgroundColor(.red)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -45,9 +45,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .baselineOffset(10)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -58,20 +58,20 @@ final class ComponentBasicModifierTests: XCTestCase {
             let mas = NSMutableAttributedString(string: "")
             mas.append(NSAttributedString(string: "Hello world",
                                           attributes: [
-                                            .font: Font.systemFont(ofSize: 20),
-                                            .foregroundColor: Color.yellow]))
+                                            .font: FontAlias.systemFont(ofSize: 20),
+                                            .foregroundColor: ColorAlias.yellow]))
             mas.append(NSAttributedString(string: "\n"))
             mas.append(NSAttributedString(string: "Second line",
-                                          attributes: [.font: Font.systemFont(ofSize: 24)]))
+                                          attributes: [.font: FontAlias.systemFont(ofSize: 24)]))
             return mas
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .font(.systemFont(ofSize: 20))
                 .foregroundColor(.yellow)
-            LineBreak()
-            AText("Second line")
+            Break()
+            Content("Second line")
                 .font(.systemFont(ofSize: 24))
         }
 
@@ -87,9 +87,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .expansion(1)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -104,9 +104,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .kerning(3)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -121,9 +121,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .ligature(.none)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -138,9 +138,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .obliqueness(0.5)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -149,7 +149,7 @@ final class ComponentBasicModifierTests: XCTestCase {
     func testModifyShadow() {
         let testData: NSAttributedString = {
             let shadow = NSShadow()
-            shadow.shadowColor = Color.black
+            shadow.shadowColor = ColorAlias.black
             shadow.shadowBlurRadius = 10
             shadow.shadowOffset = .init(width: 4, height: 4)
 
@@ -160,9 +160,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .shadow(color: .black, radius: 10, x: 4, y: 4)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -177,9 +177,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .strikethrough(style: .double)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -189,15 +189,15 @@ final class ComponentBasicModifierTests: XCTestCase {
         let testData: NSAttributedString = {
             let mas = NSMutableAttributedString(string: "Hello world",
                                                 attributes: [.strikethroughStyle: NSUnderlineStyle.patternDash.rawValue,
-                                                             .strikethroughColor: Color.black])
+                                                             .strikethroughColor: ColorAlias.black])
             mas.append(NSAttributedString(string: " with Swift"))
             return mas
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .strikethrough(style: .patternDash, color: .black)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -212,9 +212,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .stroke(width: -2)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -224,15 +224,15 @@ final class ComponentBasicModifierTests: XCTestCase {
         let testData: NSAttributedString = {
             let mas = NSMutableAttributedString(string: "Hello world",
                                                 attributes: [.strokeWidth: -2,
-                                                             .strokeColor: Color.green])
+                                                             .strokeColor: ColorAlias.green])
             mas.append(NSAttributedString(string: " with Swift"))
             return mas
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .stroke(width: -2, color: .green)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -247,9 +247,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .textEffect(.letterpressStyle)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -264,9 +264,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .underline(.patternDashDotDot)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -276,15 +276,15 @@ final class ComponentBasicModifierTests: XCTestCase {
         let testData: NSAttributedString = {
             let mas = NSMutableAttributedString(string: "Hello world",
                                                 attributes: [.underlineStyle: NSUnderlineStyle.patternDashDotDot.rawValue,
-                                                             .underlineColor: Color.cyan])
+                                                             .underlineColor: ColorAlias.cyan])
             mas.append(NSAttributedString(string: " with Swift"))
             return mas
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .underline(.patternDashDotDot, color: .cyan)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -299,9 +299,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .writingDirection(.rightToLeft)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -317,9 +317,9 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .vertical()
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -329,28 +329,28 @@ final class ComponentBasicModifierTests: XCTestCase {
     func testChaining() {
         let testData: NSAttributedString = {
             let shadow = NSShadow()
-            shadow.shadowColor = Color.black
+            shadow.shadowColor = ColorAlias.black
             shadow.shadowBlurRadius = 10
             shadow.shadowOffset = .init(width: 4, height: 4)
 
             let mas = NSMutableAttributedString(
                 string: "Hello world",
-                attributes: [.backgroundColor: Color.red,
+                attributes: [.backgroundColor: ColorAlias.red,
                              .baselineOffset: 10,
-                             .font: Font.systemFont(ofSize: 20),
-                             .foregroundColor: Color.yellow,
+                             .font: FontAlias.systemFont(ofSize: 20),
+                             .foregroundColor: ColorAlias.yellow,
                              .expansion: 1,
                              .kern: 3,
                              .ligature: 0,
                              .obliqueness: 0.5,
                              .shadow: shadow,
                              .strikethroughStyle: NSUnderlineStyle.patternDash.rawValue,
-                             .strikethroughColor: Color.black,
+                             .strikethroughColor: ColorAlias.black,
                              .strokeWidth: -2,
-                             .strokeColor: Color.green,
+                             .strokeColor: ColorAlias.green,
                              .textEffect: NSAttributedString.TextEffectStyle.letterpressStyle,
                              .underlineStyle: NSUnderlineStyle.patternDashDotDot.rawValue,
-                             .underlineColor: Color.cyan,
+                             .underlineColor: ColorAlias.cyan,
                              .writingDirection: NSWritingDirection.rightToLeft.rawValue
             ])
             mas.append(NSAttributedString(string: " with Swift"))
@@ -358,7 +358,7 @@ final class ComponentBasicModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .backgroundColor(.red)
                 .baselineOffset(10)
                 .font(.systemFont(ofSize: 20))
@@ -373,7 +373,7 @@ final class ComponentBasicModifierTests: XCTestCase {
                 .textEffect(.letterpressStyle)
                 .underline(.patternDashDotDot, color: .cyan)
                 .writingDirection(.rightToLeft)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))

@@ -21,9 +21,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         let ps = NSParagraphStyle()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .paragraphStyle(ps)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -44,9 +44,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         mps.alignment = .right
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .paragraphStyle(mps)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -64,9 +64,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .alignment(.right)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -84,9 +84,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .firstLineHeadIndent(16)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -104,9 +104,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .headIndent(13)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -124,9 +124,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .tailIndent(19)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -144,9 +144,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .lineBreakeMode(.byWordWrapping)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -166,9 +166,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .lineHeight(multiple: 1, maximum: 22, minimum: 18)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -186,9 +186,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .lineSpacing(7)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -207,9 +207,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .paragraphSpacing(9.3, before: 17.2)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -227,9 +227,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .baseWritingDirection(.rightToLeft)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -247,9 +247,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .hyphenationFactor(0.3)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -268,9 +268,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .allowsDefaultTighteningForTruncation()
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -289,10 +289,10 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .tabsStops([NSTextTab(textAlignment: .left, location: 6, options: [:]),
                             NSTextTab(textAlignment: .right, location: 4, options: [:])])
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -315,9 +315,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .textBlocks([textBlock])
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -338,9 +338,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .textLists([textList])
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -358,9 +358,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .tighteningFactorForTruncation(0.5)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -378,9 +378,9 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .headerLevel(2)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -413,7 +413,7 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         }()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .alignment(.right)
                 .firstLineHeadIndent(16)
                 .headIndent(13)
@@ -425,7 +425,7 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
                 .baseWritingDirection(.rightToLeft)
                 .hyphenationFactor(0.3)
                 .allowsDefaultTighteningForTruncation()
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))
@@ -434,7 +434,7 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
     @available(iOS 9.0, tvOS 9.0, watchOS 2.0, OSX 10.11, *)
     func testRandomChainingOrderEqualness() {
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .alignment(.right)
                 .firstLineHeadIndent(16)
                 .headIndent(13)
@@ -446,11 +446,11 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
                 .baseWritingDirection(.rightToLeft)
                 .hyphenationFactor(0.3)
                 .allowsDefaultTighteningForTruncation()
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         let sut2 = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .firstLineHeadIndent(16)
                 .headIndent(13)
                 .alignment(.right)
@@ -462,7 +462,7 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
                 .lineHeight(multiple: 1, maximum: 22, minimum: 18)
                 .paragraphSpacing(9.3, before: 17.2)
                 .baseWritingDirection(.rightToLeft)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(sut2))
@@ -481,10 +481,10 @@ final class ComponentParagraphSylteModifierTests: XCTestCase {
         let ps = NSParagraphStyle()
 
         let sut = NSAttributedString {
-            AText("Hello world")
+            Content("Hello world")
                 .paragraphStyle(ps)
                 .alignment(.justified)
-            AText(" with Swift")
+            Content(" with Swift")
         }
 
         XCTAssertTrue(sut.isEqual(testData))

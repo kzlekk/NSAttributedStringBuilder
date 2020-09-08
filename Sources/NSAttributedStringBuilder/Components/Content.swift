@@ -4,10 +4,10 @@ import UIKit
 import AppKit
 #endif
 
-public typealias AText = NSAttributedString.AttrText
+public typealias Content = NSAttributedString.Content
 
 extension NSAttributedString {
-    public struct AttrText: Component {
+    public struct Content: Component {
         public let string: String
         public let attributes: Attributes
 

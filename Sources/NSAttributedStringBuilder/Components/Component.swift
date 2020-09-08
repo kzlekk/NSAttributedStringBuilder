@@ -23,7 +23,7 @@ public enum Ligature: Int {
 
 extension Component {
     private func build(_ string: String, attributes: Attributes) -> Component {
-        return AText(string, attributes: attributes)
+        return Content(string, attributes: attributes)
     }
 
     public var attributedString: NSAttributedString {
@@ -46,7 +46,7 @@ extension Component {
 // MARK: Basic Modifiers
 
 extension Component {
-    public func backgroundColor(_ color: Color) -> Component {
+    public func backgroundColor(_ color: ColorAlias) -> Component {
         attributes([.backgroundColor: color])
     }
 
@@ -54,11 +54,11 @@ extension Component {
         attributes([.baselineOffset: baselineOffset])
     }
 
-    public func font(_ font: Font) -> Component {
+    public func font(_ font: FontAlias) -> Component {
         attributes([.font: font])
     }
 
-    public func foregroundColor(_ color: Color) -> Component {
+    public func foregroundColor(_ color: ColorAlias) -> Component {
         attributes([.foregroundColor: color])
     }
 
@@ -73,12 +73,12 @@ extension Component {
     public func ligature(_ ligature: Ligature) -> Component {
         attributes([.ligature: ligature.rawValue])
     }
-
+    
     public func obliqueness(_ obliqueness: Float) -> Component {
         attributes([.obliqueness: obliqueness])
     }
 
-    public func shadow(color: Color? = nil, radius: CGFloat, x: CGFloat, y: CGFloat) -> Component {
+    public func shadow(color: ColorAlias? = nil, radius: CGFloat, x: CGFloat, y: CGFloat) -> Component {
         let shadow = NSShadow()
         shadow.shadowColor = color
         shadow.shadowBlurRadius = radius
@@ -86,7 +86,7 @@ extension Component {
         return attributes([.shadow: shadow])
     }
 
-    public func strikethrough(style: NSUnderlineStyle, color: Color? = nil) -> Component {
+    public func strikethrough(style: NSUnderlineStyle, color: ColorAlias? = nil) -> Component {
         if let color = color {
             return attributes([.strikethroughStyle: style.rawValue,
                                .strikethroughColor: color])
@@ -94,7 +94,7 @@ extension Component {
         return attributes([.strikethroughStyle: style.rawValue])
     }
 
-    public func stroke(width: CGFloat, color: Color? = nil) -> Component {
+    public func stroke(width: CGFloat, color: ColorAlias? = nil) -> Component {
         if let color = color {
             return attributes([.strokeWidth: width,
                                .strokeColor: color])
@@ -106,7 +106,7 @@ extension Component {
         return attributes([.textEffect: textEffect])
     }
 
-    public func underline(_ style: NSUnderlineStyle, color: Color? = nil) -> Component {
+    public func underline(_ style: NSUnderlineStyle, color: ColorAlias? = nil) -> Component {
         if let color = color {
             return attributes([.underlineStyle: style.rawValue,
                                .underlineColor: color])

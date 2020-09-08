@@ -19,17 +19,18 @@ struct ContentView : View {
 
             // UITextView: UIViewRepresentable 
             AttributedText {
-                AText("AttributedText Title")
+                Tab()
+                Content("AttributedText Title")
                     .font(.preferredFont(forTextStyle: .largeTitle))
-                LineBreak()
-                AText("AttributedText Subtitle")
+                Break()
+                Content("AttributedText Subtitle")
                     .font(.preferredFont(forTextStyle: .headline))
-                LineBreak()
+                Break()
                 Link("Attributed Link", url: URL(string: "https://www.apple.com")!)
-                    .font(.preferredFont(forTextStyle: .body))
-                LineBreak()
+                    .font(.italicSystemFont(ofSize: 17))
+                Break()
                 ImageAttachment(image)
-            }
+            }.accentColor(ColorAlias.red)
         }
     }
 }

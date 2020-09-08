@@ -31,7 +31,7 @@ final class StaticComponentsTests: XCTestCase {
         XCTAssertTrue(sut.isEqual(testData))
     }
 
-    func testLineBreak() {
+    func testBreak() {
         let testData: NSAttributedString = {
             let mas = NSMutableAttributedString(string: "")
             mas.append(NSAttributedString(string: "\n"))
@@ -41,7 +41,7 @@ final class StaticComponentsTests: XCTestCase {
 
         let sut = NSAttributedString {
             Empty()
-            LineBreak()
+            Break()
             Empty()
         }
 

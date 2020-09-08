@@ -1,12 +1,11 @@
-// NSAttributedString does not support SwiftUI Font and color, we still need to use UI/NS Font/Color
 #if canImport(UIKit)
 import UIKit
-public typealias Font = UIFont
-public typealias Color = UIColor
+public typealias FontAlias = UIFont
+public typealias ColorAlias = UIColor
 #elseif canImport(AppKit)
 import AppKit
-public typealias Font = NSFont
-public typealias Color = NSColor
+public typealias FontAlias = NSFont
+public typealias ColorAlias = NSColor
 #endif
 
 public typealias Attributes = [NSAttributedString.Key: Any]

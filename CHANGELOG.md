@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.4] - 2020-09-08
+- [Changed] Rename AText to Content
+- [Changed] Rename LineBreak to Break
+- [Changed] Rename Font and Color to FontAlias/ColorAlias
+
 ## [0.3.3] - 2019-11-19
 - [Added] CocoaPods support macOS and tvOS
 
