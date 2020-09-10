@@ -1,4 +1,4 @@
-@testable import NSAttributedStringBuilder
+@testable import AttributedStringBuilder
 import XCTest
 
 final class ImageAttachmentTests: XCTestCase {
