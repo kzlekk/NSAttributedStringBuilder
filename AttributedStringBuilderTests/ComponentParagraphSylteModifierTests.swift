@@ -1,5 +1,5 @@
 import XCTest
-@testable import NSAttributedStringBuilder
+@testable import AttributedStringBuilder
 
 #if canImport(UIKit)
 import UIKit

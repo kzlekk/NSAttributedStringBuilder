@@ -11,7 +11,7 @@ public typealias ColorAlias = NSColor
 public typealias Attributes = [NSAttributedString.Key: Any]
 
 @_functionBuilder
-public struct NSAttributedStringBuilder {
+public struct AttributedStringBuilder {
     public static func buildBlock(_ components: Component...) -> NSAttributedString {
         let mas = NSMutableAttributedString(string: "")
         for component in components {
@@ -22,7 +22,7 @@ public struct NSAttributedStringBuilder {
 }
 
 extension NSAttributedString {
-    public convenience init(@NSAttributedStringBuilder _ builder: () -> NSAttributedString) {
+    public convenience init(@AttributedStringBuilder _ builder: () -> NSAttributedString) {
         self.init(attributedString: builder())
     }
 }

@@ -1,5 +1,5 @@
 import SwiftUI
-import NSAttributedStringBuilder
+import AttributedStringBuilder
 
 /// A custom view to use NSAttributedString in SwiftUI
 final public class AttributedText: UIViewRepresentable {
@@ -9,20 +9,22 @@ final public class AttributedText: UIViewRepresentable {
         self.attributedString = attributedString
     }
 
-    public convenience init(@NSAttributedStringBuilder _ builder: () -> NSAttributedString) {
+    public convenience init(@AttributedStringBuilder _ builder: () -> NSAttributedString) {
         self.init(builder())
     }
 
-    public func makeUIView(context: UIViewRepresentableContext<AttributedText>) -> UILabel {
-        let label = UILabel(frame: .zero)
-        label.attributedText = self.attributedString
-        label.backgroundColor = .clear
-        label.textAlignment = .natural
-        label.numberOfLines = 0
-        return label
+    public func makeUIView(context: UIViewRepresentableContext<AttributedText>) -> UITextView {
+        let textView = UITextView(frame: .zero)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.isEditable = false
+        textView.isSelectable = false
+        textView.isScrollEnabled = false
+        textView.backgroundColor = .clear
+        textView.attributedText = self.attributedString
+        return textView
     }
 
-    public func updateUIView(_ textView: UILabel, context: UIViewRepresentableContext<AttributedText>) {
+    public func updateUIView(_ textView: UITextView, context: UIViewRepresentableContext<AttributedText>) {
         textView.attributedText = self.attributedString
     }
 }

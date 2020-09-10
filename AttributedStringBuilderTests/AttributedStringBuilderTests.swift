@@ -1,7 +1,7 @@
 import XCTest
-@testable import NSAttributedStringBuilder
+@testable import AttributedStringBuilder
 
-final class NSAttributedStringBuilderTests: XCTestCase {
+final class AttributedStringBuilderTests: XCTestCase {
     func testInitWithTwoContent() {
         let testData: NSAttributedString = {
             let mas = NSMutableAttributedString(string: "Hello world")

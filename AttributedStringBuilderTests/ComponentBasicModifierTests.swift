@@ -1,5 +1,5 @@
 import XCTest
-@testable import NSAttributedStringBuilder
+@testable import AttributedStringBuilder
 
 final class ComponentBasicModifierTests: XCTestCase {
     func testModifyWithSingleAttribute() {

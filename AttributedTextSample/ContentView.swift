@@ -1,4 +1,4 @@
-import NSAttributedStringBuilder
+import AttributedStringBuilder
 import SwiftUI
 
 let image = UIImage(named: "Swift_logo_color_rgb.jpg")!
@@ -30,7 +30,7 @@ struct ContentView : View {
                     .font(.italicSystemFont(ofSize: 17))
                 Break()
                 ImageAttachment(image)
-            }.accentColor(ColorAlias.red)
+            }.accentColor(.red)
         }
     }
 }
